@@ -2,8 +2,9 @@ import os
 import shutil
 from datetime import datetime
 
-dark_souls_3_save_dir = r'C:\Users\your_user_name\AppData\Roaming\DarkSoulsIII'
-back_up_dir = r'C:\Users\your_user_name\Documents\ds3_save_backup'
+dark_souls_3_save_dir = r'C:\Users\yourUser\AppData\Roaming\DarkSoulsIII'
+back_up_dir = r'C:\Users\yourUser\Documents\ds3_save_backup'
+steam_game_link = r'steam://rungameid/123456'  # found by creating shortcut within steam
 
 # find save file
 file_paths = [f'{dark_souls_3_save_dir}{os.sep}{fileName}' for fileName in os.listdir(dark_souls_3_save_dir)]
@@ -30,3 +31,6 @@ if len(back_ups) > 10:
     for file in surplus_back_ups:
         path = f'{back_up_dir}{os.sep}{file}'
         os.remove(path)
+
+# start game
+os.startfile(steam_game_link)
